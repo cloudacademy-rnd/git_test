@@ -25,8 +25,8 @@ else
 fi
 
 # Get message
-git_message=$(git log --format=%B -n 1 $GIT_COMMIT)
+git_message=$(git log --format=%B -n 1)
 
 # Update new version tag
-git tag -a $year.$major.$minor -m "test tagging script"
+git tag -a $year.$major.$minor -m $git_message
 git push --tags
